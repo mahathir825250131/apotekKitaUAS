@@ -1,0 +1,109 @@
+/* Base container style */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #f4f6f9;
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #1f4e5f;
+}
+
+.sidebar-title {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+}
+
+.sidebar-subtitle {
+    -fx-text-fill: #cfe3ea;
+    -fx-font-size: 12px;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-alignment: BASELINE_LEFT;
+    -fx-padding: 8px 10px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+}
+
+.page-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f4e5f;
+}
+
+.total-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.status-text {
+    -fx-text-fill: #555555;
+}
+
+/* Styling the button class */
+.custom-button {
+    -fx-background-color: #2a9d8f;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 18px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.custom-button:hover {
+    -fx-background-color: #21867a;
+}
+
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 6px;
+}
+
+.text-field:focused {
+    -fx-border-color: #2a9d8f;
+}
+
+.button-primary {
+    -fx-background-color: #e76f51;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 20px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.button-primary:hover {
+    -fx-background-color: #d65a3c;
+}
+
+.button-secondary {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.button-secondary:hover {
+    -fx-background-color: #d5d5d5;
+}
+
+/* Struk: font monospace seperti kertas struk kasir */
+.struk {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 13px;
+}

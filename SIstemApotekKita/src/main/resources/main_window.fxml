@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox prefHeight="680.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="main.java.controller.DashboardController" stylesheets="@css/style.css">
+<children>
+<!-- Sidebar Navigation Menu -->
+<VBox spacing="15.0" styleClass="sidebar" prefWidth="210.0" minWidth="210.0">
+<padding>
+<Insets bottom="20.0" left="15.0" right="15.0" top="30.0"/>
+</padding>
+<children>
+<Label text="APOTEK KITA" styleClass="sidebar-title"/>
+<Label text="Sistem Pembelian Obat" styleClass="sidebar-subtitle"/>
+<Separator opacity="0.3"/>
+<Button text="Pembelian Obat" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showPembelianView"/>
+<Button text="Data Obat" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showObatView"/>
+<Button text="Riwayat Transaksi" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showRiwayatView"/>
+<Separator opacity="0.3"/>
+<Pane VBox.vgrow="ALWAYS"/>
+<Button text="Keluar" maxWidth="Infinity" styleClass="sidebar-button" onAction="#handleExit"/>
+</children>
+</VBox>
+<!-- Primary Display Workspace Panel -->
+<TabPane fx:id="mainTabPane" HBox.hgrow="ALWAYS" tabClosingPolicy="ALL_TABS">
+<!-- Tab dibuka secara dinamis oleh DashboardController -->
+</TabPane>
+</children>
+</HBox>

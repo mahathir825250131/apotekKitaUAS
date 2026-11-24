@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+
+<HBox spacing="15.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="main.java.controller.PembelianController" stylesheets="@css/style.css">
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+</padding>
+<children>
+<!-- KIRI: daftar obat -->
+<VBox spacing="10.0" HBox.hgrow="ALWAYS">
+<children>
+<Label text="Daftar Obat" styleClass="page-title"/>
+<TextField fx:id="cariField" promptText="Cari kode / nama obat..."/>
+<TableView fx:id="obatTable" VBox.vgrow="ALWAYS">
+<columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+<columns>
+<TableColumn text="Kode" prefWidth="60">
+<cellValueFactory><PropertyValueFactory property="kode"/></cellValueFactory>
+</TableColumn>
+<TableColumn text="Nama Obat" prefWidth="170">
+<cellValueFactory><PropertyValueFactory property="nama"/></cellValueFactory>
+</TableColumn>
+<TableColumn text="Jenis" prefWidth="60">
+<cellValueFactory><PropertyValueFactory property="jenis"/></cellValueFactory>
+</TableColumn>
+<TableColumn fx:id="hargaColumn" text="Harga" prefWidth="90"/>
+<TableColumn fx:id="sisaColumn" text="Stok" prefWidth="50"/>
+</columns>
+</TableView>
+<HBox spacing="10.0" alignment="CENTER_LEFT">
+<children>
+<Label text="Jumlah:"/>
+<Spinner fx:id="qtySpinner" editable="true" prefWidth="90"/>
+<Button styleClass="custom-button" onAction="#handleTambah" text="Tambah ke Keranjang"/>
+</children>
+</HBox>
+</children>
+</VBox>
+
+<!-- KANAN: keranjang & pembayaran -->
+<VBox spacing="10.0" prefWidth="430.0" minWidth="380.0">
+<children>
+<Label text="Keranjang" styleClass="page-title"/>
+<TableView fx:id="keranjangTable" VBox.vgrow="ALWAYS">
+<columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+<placeholder><Label text="Keranjang masih kosong"/></placeholder>
+<columns>
+<TableColumn text="Nama Obat" prefWidth="150">
+<cellValueFactory><PropertyValueFactory property="nama"/></cellValueFactory>
+</TableColumn>
+<TableColumn text="Qty" prefWidth="40">
+<cellValueFactory><PropertyValueFactory property="qty"/></cellValueFactory>
+</TableColumn>
+<TableColumn text="Harga" prefWidth="80">
+<cellValueFactory><PropertyValueFactory property="hargaText"/></cellValueFactory>
+</TableColumn>
+<TableColumn text="Subtotal" prefWidth="90">
+<cellValueFactory><PropertyValueFactory property="subtotalText"/></cellValueFactory>
+</TableColumn>
+</columns>
+</TableView>
+<HBox spacing="10.0">
+<children>
+<Button styleClass="button-secondary" onAction="#handleHapusItem" text="Hapus Item"/>
+<Button styleClass="button-secondary" onAction="#handleKosongkan" text="Kosongkan"/>
+</children>
+</HBox>
+<Separator/>
+<GridPane hgap="10.0" vgap="10.0">
+<children>
+<Label text="TOTAL" styleClass="total-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+<Label fx:id="totalLabel" text="Rp.0" styleClass="total-label" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+<Label text="Metode Bayar:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+<ComboBox fx:id="metodeComboBox" promptText="Pilih metode" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+<Label fx:id="uangLabel" text="Uang Diterima:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+<TextField fx:id="uangField" promptText="misal 100000" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+<Label fx:id="kembalianTitle" text="Kembalian:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+<Label fx:id="kembalianLabel" text="Rp.0" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+</children>
+<columnConstraints>
+<ColumnConstraints minWidth="110"/>
+<ColumnConstraints hgrow="ALWAYS"/>
+</columnConstraints>
+</GridPane>
+<Button styleClass="button-primary" maxWidth="Infinity" onAction="#handleBayar" text="Bayar &amp; Cetak Struk"/>
+</children>
+</VBox>
+</children>
+</HBox>
